@@ -16,7 +16,7 @@ int main()
 	string text;
 	getline(cin, text);
 	stringstream ss(text);
-	//cin >> text;
+	
 
 	string word[10] = {};
 	
