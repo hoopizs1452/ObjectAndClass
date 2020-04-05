@@ -15,7 +15,6 @@ double sum(Rectangle rectangleArray[], int size)
 
 void printRectangleArray(Rectangle rectangleArray[], int size)
 {
-	//cout << "Height" << setw(7) << "Width" << setw(8) << "Area" << endl;
 	for (int i = 0; i < size; i++)
 	{
 		cout << rectangleArray[i].getHeight() << setw(4) << rectangleArray[i].getWidth()
@@ -31,8 +30,6 @@ int main()
 
 	double height[SIZE];
 	double width[SIZE];
-	//Rectangle rectangleArrayHeight[SIZE];
-	//Rectangle rectangleArrayWidth[SIZE];
 	Rectangle rectangleArray[SIZE];
 
 	for (int i = 0; i < SIZE; i++)
@@ -42,8 +39,6 @@ int main()
 
 	for (int j = 0; j < SIZE; j++)
 	{
-		//rectangleArrayHeight[j].setHeight(height[j]);
-		//rectangleArrayWidth[j].setWidth(width[j]);
 		rectangleArray[j].setHeight(height[j]);
 		rectangleArray[j].setWidth(width[j]);
 	}
