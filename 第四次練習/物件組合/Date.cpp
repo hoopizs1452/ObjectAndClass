@@ -1,13 +1,17 @@
 #include <iostream>
-#include <string>
 #include "Date.h"
 using namespace std;
 
-void Date::setDate(int mm, int dd, int yy)
+Date::Date()
 {
-	month = mm;
-	year = yy;
-	day = dd;
+
+}
+
+Date::Date(int m, int d, int y)
+{
+	month = m;
+	day = d;
+	year = y;
 }
 
 void Date::setMonth(int newM)
@@ -22,25 +26,25 @@ void Date::setDay(int newD)
 
 void Date::setYear(int newY)
 {
-	year = newY;
+	day = newY;
 }
 
-int Date::getMonth()
+int Date::getMonth() const
 {
 	return month;
 }
 
-int Date::getDay()
+int Date::getDay() const
 {
 	return day;
 }
 
-int Date::getYear()
+int Date::getYear() const
 {
 	return year;
 }
 
 void Date::print()
 {
-	cout << month << "/" << day << "/" << year << endl;
+	cout << month << "/" << day << "/" << year << " ";
 }
