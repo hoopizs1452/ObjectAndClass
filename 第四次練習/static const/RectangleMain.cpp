@@ -4,19 +4,20 @@ using namespace std;
 
 int main()
 {
-    double width, height;
-    int count = 0;
+	int count = 0;
+	int width[3];
+	int height[3];
 
-    for (int i = 0; i < 3; i++)
-    {
-        cin >> width >> height;
-        Rectangle r(width, height);
+	for (int i = 0; i < 3; i++)
+	{
+		cin >> width[i] >> height[i];
+		Rectangle rectangle(width[i], height[i]);
 
-        cout << r.getWidth() << " " << r.getHeight() << " " << r.getArea() << endl;
-        count = Rectangle::geNumOfRect();
-    }
-    cout << count << " " << "Rectangles" << endl;
-    
-    system("pause");
-    return 0;
+		cout << rectangle.getWidth() << " " << rectangle.getHeight() << " " << rectangle.getArea() << endl;
+		count = Rectangle::getNumOfRect();
+	}
+	cout << count << " " << "Rectangles" << endl;
+
+	system("pause");
+	return 0;
 }
