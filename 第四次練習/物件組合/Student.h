@@ -1,7 +1,6 @@
 //#pragma once
 #ifndef Student_H
 #define Student_H
-
 #include <string>
 #include "Date.h"
 using namespace std;
@@ -10,8 +9,8 @@ class Student
 {
 private:
 	string name;
-	int score;
 	Date birthDay;
+	int score;
 public:
 	Student(string, Date, int = 0);
 	void setName(string);
@@ -22,5 +21,4 @@ public:
 	int getScore() const;
 	void print();
 };
-
 #endif
