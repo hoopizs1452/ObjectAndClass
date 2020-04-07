@@ -1,4 +1,4 @@
-#include "Rectangle4.h"
+#include "Rectangle.h"
 
 int Rectangle::numOfRect = 0;
 
