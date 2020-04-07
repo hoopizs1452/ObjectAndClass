@@ -1,27 +1,21 @@
 //#pragma once
-#ifndef DATE_H
-#define DATE_H
-
-#include <array>
-#include <iostream>
+#ifndef Date_H
+#define Date_H
 
 class Date
 {
+private:
+	int month, day, year;
 public:
-	//Date(int = 0, int = 0, int = 0);
-	void setDate(int, int, int);
+	Date();
+	Date(int, int, int);
 	void setMonth(int);
 	void setDay(int);
 	void setYear(int);
-	int getMonth();
-	int getDay();
-	int getYear();
+	int getMonth() const;
+	int getDay() const;
+	int getYear() const;
 	void print();
-	
-private:
-	int month;
-	int day;
-	int year;
 };
 
 #endif
