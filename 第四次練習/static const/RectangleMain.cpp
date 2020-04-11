@@ -14,7 +14,7 @@ int main()
 		Rectangle rectangle(width[i], height[i]);
 
 		cout << rectangle.getWidth() << " " << rectangle.getHeight() << " " << rectangle.getArea() << endl;
-		count = Rectangle::getNumOfRect();
+		count = rectangle.getNumOfRect();
 	}
 	cout << count << " " << "Rectangles" << endl;
 
