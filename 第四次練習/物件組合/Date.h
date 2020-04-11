@@ -7,8 +7,7 @@ class Date
 private:
 	int month, day, year;
 public:
-	Date();
-	Date(int, int, int);
+	Date(int = 0, int = 0, int = 0);
 	void setMonth(int);
 	void setDay(int);
 	void setYear(int);
