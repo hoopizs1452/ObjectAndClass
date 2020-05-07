@@ -10,30 +10,16 @@ int main()
 	Rational r4(7, 2);
 	Rational r5(5, 6);
 
-	Rational first;
-	Rational second;
-
-	first = r2.multiply(r3).add(r1);
-	second = r4.subtract(r5).divide(r2);
-
-	cout << "first=" << first.toString() << "\n";
-	cout << "second=" << second.toString() << "\n";
-
-	Rational g1(first.getDenominator(), first.getDenominator());
-	Rational g2(second.getDenominator(), second.getDenominator());
-
-	Rational f1 = first.add(g1);
-	Rational f2 = second.subtract(g2);
-
-	cout << "++first=" << f1.toString() << "\n";
-	cout << "--second=" << f2.toString() << "\n";
-
-	if (f1.doubleValue() < f2.doubleValue())
+	cout << "first=" << r1 + r2 * r3 << endl;
+	cout << "second=" << (r4 - r5) / (r2) << endl;
+	cout << "++first=" << ++(r1 + r2 * r3) << endl;
+	cout << "--second=" << --((r4 - r5) / (r2)) << endl;
+	if (++(r1 + r2 * r3) > --((r4 - r5) / (r2)))
 	{
-		cout << f1.toString() << "<" << f2.toString() << endl;
+		cout << ++(r1 + r2 * r3) << ">" << --((r4 - r5) / (r2)) << endl;
 	}
 	else
-		cout << f1.toString() << ">" << f2.toString() << endl;
+		cout << ++(r1 + r2 * r3) << "<" << --((r4 - r5) / (r2)) << endl;
 	
 	system("pause");
 	return 0;

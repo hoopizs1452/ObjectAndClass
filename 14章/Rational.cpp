@@ -1,6 +1,9 @@
 #include "Rational.h"
+#include <iostream>
+#include <string>
 #include <sstream> // Used in toString to convert numbers to strings
 #include <cstdlib> // For the abs function
+
 Rational::Rational()
 {
 	numerator = 0;
@@ -108,4 +111,141 @@ string Rational::toString() const
 		ss << "/" << denominator;
 
 	return ss.str();
+}
+
+Rational& Rational::operator+=(const Rational& secondRational)
+{
+	*this = add(secondRational);
+	return *this;
+}
+
+Rational& Rational::operator-=(const Rational& secondRtional)
+{
+	*this = subtract(secondRtional);
+	return *this;
+}
+
+Rational& Rational::operator*=(const Rational& secondRational)
+{
+	*this = multiply(secondRational);
+	return *this;
+}
+
+Rational& Rational::operator/=(const Rational& secondRational)
+{
+	*this = divide(secondRational);
+	return *this;
+}
+
+int& Rational::operator[](int index)
+{
+	if (index == 0)
+		return numerator;
+	else
+		return denominator;
+}
+
+Rational& Rational::operator++()
+{
+	numerator += denominator;
+	return *this;
+}
+
+Rational& Rational::operator--()
+{
+	numerator -= denominator;
+	return *this;
+}
+
+Rational Rational::operator++(int dummy)
+{
+	Rational temp(numerator, denominator);
+	numerator += denominator;
+	return temp;
+}
+
+Rational Rational::operator--(int dummy)
+{
+	Rational temp(numerator, denominator);
+	numerator -= denominator;
+	return temp;
+}
+
+Rational Rational::operator+()
+{
+	return *this;
+}
+
+Rational Rational::operator-()
+{
+	return Rational(-numerator, denominator);
+}
+
+ostream& operator<<(ostream& out, const Rational& rational)
+{
+	if (rational.denominator == 1)
+		out << rational.numerator;
+	else
+		out << rational.numerator << "/" << rational.denominator;
+	return out;
+}
+
+istream& operator>>(istream& in, Rational& rational)
+{
+	cout << "Enter numerator: ";
+	in >> rational.numerator;
+
+	cout << "Ener denominator: ";
+	in >> rational.denominator;
+	return in;
+}
+
+bool operator<(const Rational& r1, const Rational& r2)
+{
+	return (r1.compareTo(r2) < 0);
+}
+
+bool operator<=(const Rational& r1, const Rational& r2)
+{
+	return (r1.compareTo(r2) <= 0);
+}
+
+bool operator>(const Rational& r1, const Rational& r2)
+{
+	return (r1.compareTo(r2) > 0);
+}
+
+bool operator>=(const Rational& r1, const Rational& r2)
+{
+	return (r1.compareTo(r2) >= 0);
+}
+
+bool operator==(const Rational& r1, const Rational& r2)
+{
+	return (r1.compareTo(r2) == 0);
+}
+
+bool operator!=(const Rational& r1, const Rational& r2)
+{
+	return (r1.compareTo(r2) != 0);
+}
+
+Rational operator+(const Rational& r1, const Rational& r2)
+{
+	return r1.add(r2);
+}
+
+Rational operator-(const Rational& r1, const Rational& r2)
+{
+	return r1.subtract(r2);
+}
+
+Rational operator*(const Rational& r1, const Rational& r2)
+{
+	return r1.multiply(r2);
+}
+
+Rational operator/(const Rational& r1, const Rational& r2)
+{
+	return r1.divide(r2);
 }
