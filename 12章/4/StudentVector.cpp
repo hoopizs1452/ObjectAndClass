@@ -46,7 +46,6 @@ int main()
 {
 	vector<vector<double>> pascal(5, vector<double>(3, 1));
 	pascal[0][0] = 80.0;
-	pascal[0][0] = 80.0;
 	pascal[0][1] = 70.0;
 	pascal[0][2] = 90.0;
 	pascal[1][0] = 85.0;
