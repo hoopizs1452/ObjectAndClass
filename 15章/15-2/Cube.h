@@ -4,18 +4,17 @@
 
 class Cube : public GeometricObject
 {
-public:
-	Cube();
-	Cube(double length);
-	Cube(double length, const string& color);
-	double getLength() const;
-	void setLength(double);
-	virtual double getArea() const;
-	virtual double getVolume() const;
-	//string display(GeometricObject &) const;
-
 private:
 	double length;
+public:
+	Cube();
+	Cube(double, const string&);
+	void setLength(double);
+	double getLength() const;
+	double getVolume() const;
+	double getArea() const;
+	virtual string display() const;
 };
 
-#endif
+#endif // !CUBE_H
+

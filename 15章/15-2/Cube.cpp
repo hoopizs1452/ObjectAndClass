@@ -1,13 +1,24 @@
+#include <math.h>
+#include <string>
+#include <sstream>
+#include <iomanip>
 #include "Cube.h"
+using namespace std;
 
 Cube::Cube()
 {
 	length = 1;
 }
 
+Cube::Cube(double length, const string& color)
+{
+	this->length = length;
+	setColor(color);
+}
+
 void Cube::setLength(double length)
 {
-	this->length = (length >= 0) ? length : 0;
+	this->length = length;
 }
 
 double Cube::getLength() const
@@ -15,23 +26,20 @@ double Cube::getLength() const
 	return length;
 }
 
-Cube::Cube(double length)
+double Cube::getVolume() const
 {
-	setLength(length);
-}
-
-Cube::Cube(double length, const string& color)
-{
-	setLength(length);
-	setColor(color);
+	return pow(length, 3);
 }
 
 double Cube::getArea() const
 {
-	return 6 * length * length;
+	return 6 * pow(length, 2);
 }
 
-double Cube::getVolume() const
+string Cube::display() const
 {
-	return length * length * length;
+	stringstream ss;
+	ss << setprecision(1) << fixed << ", area:" << getArea() << ", volume:" << getVolume()
+		<< ", color:" << getColor() << endl;
+	return ss.str();
 }

@@ -2,20 +2,19 @@
 #define BALL_H
 #include "GeometricObject.h"
 
-class Ball : public GeometricObject
+class Ball:public GeometricObject
 {
-public:
-	Ball();
-	Ball(double);
-	Ball(double radius, const string& color);
-	double getRadius() const;
-	void setRadius(double);
-	virtual double getArea() const;
-	virtual double getVolume() const;
-	//string display(GeometricObject &) const;
-
 private:
 	double radius;
+public:
+	Ball();
+	Ball(double, const string&);
+	void setRadius(double);
+	double getRadius() const;
+	double getVolume() const;
+	double getArea() const;
+	virtual string display() const;
 };
 
-#endif
+#endif // !BALL_H
+

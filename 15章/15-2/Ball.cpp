@@ -1,13 +1,13 @@
+#include <math.h>
+#include <string>
+#include <sstream>
+#include <iomanip>
 #include "Ball.h"
+using namespace std;
 
 Ball::Ball()
 {
 	radius = 1;
-}
-
-Ball::Ball(double radius)
-{
-	setRadius(radius);
 }
 
 Ball::Ball(double radius, const string& color)
@@ -16,22 +16,30 @@ Ball::Ball(double radius, const string& color)
 	setColor(color);
 }
 
+void Ball::setRadius(double radius)
+{
+	this->radius = radius;
+}
+
 double Ball::getRadius() const
 {
 	return radius;
 }
 
-void Ball::setRadius(double radius)
+double Ball::getVolume() const
 {
-	this->radius = (radius >= 0) ? radius : 0;
+	return (3.14159 * pow(radius, 3)) * 4 / 3;
 }
 
 double Ball::getArea() const
 {
-	return 4 * 3.14159 * radius * radius;
+	return 4 * 3.14159 * pow(radius, 2);
 }
 
-double Ball::getVolume() const
+string Ball::display() const
 {
-	return (3.14159 * radius * radius * radius) * 4 / 3;
+	stringstream ss;
+	ss << setprecision(1) << fixed << ", area:" << getArea() << ", volume:" << getVolume()
+		<< ", color:" << getColor() << endl;
+	return ss.str();
 }

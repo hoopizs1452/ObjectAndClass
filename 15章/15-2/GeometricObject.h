@@ -5,17 +5,14 @@ using namespace std;
 
 class GeometricObject
 {
-public:
-	GeometricObject();
-	GeometricObject(const string& color);
-	string getColor() const;
-	void setColor(const string& color);
-	virtual double getArea() const = 0;
-	virtual double getVolume() const = 0;
-	string display(GeometricObject & r) const;
-
 private:
 	string color;
+public:
+	GeometricObject();
+	GeometricObject(const string&);
+	void setColor(const string&);
+	string getColor() const;
+	virtual string display() const = 0;
 };
 
-#endif 
+#endif // !GEOMETRICOBJECT_H
