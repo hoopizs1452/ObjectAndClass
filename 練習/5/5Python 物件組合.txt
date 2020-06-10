@@ -1,0 +1,34 @@
+請用 Python 設計兩類別 Teacher 與 Body
+
+Teacher 類別的 data fields(private):
+name、body、salary
+
+Body 類別的 data fields(private):
+height、weight
+
+Teacher 類別中請設計建構者和 function:
+setName、getName、setBody、getBody、setSalary、getSalary、toString
+Teacher 類別中 toString 的功能為輸出如範例之資訊
+
+Body 類別中請設計建構者和 function:
+setHeight、getHeight、setWeight、getWeight、toString
+Body 類別中 toString 的功能為輸出 BMI
+
+主程式建立兩個 Teacher 物件
+teacher1 = Teacher("Candy", Body(1.7, 80), 88000)
+teacher2 = Teacher("Linda", Body(1.6, 90), 61000)
+
+輸入說明：
+主程式依序輸入名字、身高、體重。
+
+輸出說明：
+分別修改 teacher1 的名字和修改 teacher2 的身高與體重最後利用 Teacher 物件中的 toString 進行輸 出。
+
+輸入範例：
+Superstar 1.5 76
+
+輸出範例：
+Superstar 27.68 88000 Linda 33.78 61000
+
+
+※ 請使用 round() 內建函式取小數點後兩位，如 round(bmi , 2)
