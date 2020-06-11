@@ -1,4 +1,4 @@
-接續第三題
+接續第二題
 在主程式撰寫一個函式 display(Shape &)
 裡面需呼叫 toString(), getVolume()，getColor()
 此題必須適當使用 virtual 完成抽象(abstract)函數。
